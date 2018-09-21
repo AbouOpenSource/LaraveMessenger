@@ -25,6 +25,9 @@ Route::get('/home', 'ConversationsController@index')->name('conversations');
 
 Route::get('/conversations','ConversationsController@index')->name('conversations');
 
-Route::get('/conversations/{user}','ConversationsController@show')->name('conversations.show');
+Route::get('/conversations/{user}','ConversationsController@show')
+	//->middleware('can:talkTo,user')
+	->name('conversations.show');
 
 Route::post('/conversations/{user}','ConversationsController@store');
+//->middleware('can:talkTo,user');

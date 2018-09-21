@@ -17,7 +17,7 @@
 							<strong>
 								{{$message->from->id !== $user->id ? "Moi" : $message->from->name }}
 							</strong><br>
-							{{ $message->content}}
+							{!! nl2br(e($message->content)) !!}
 
 						</p>
 					</div>
@@ -25,8 +25,8 @@
 
 
 				</div>
-
-
+	
+				<hr>
 			@endforeach
 			
 			{{--@if($errors->any())

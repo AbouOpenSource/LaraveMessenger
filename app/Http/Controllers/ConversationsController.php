@@ -51,8 +51,8 @@ class ConversationsController extends Controller
      		'users' => $this->r->getConversations($this->auth->user()->id),
      		'user' => $user,
             'messages'=> $this->r->getMessagesFor($this->auth->user()->id,$user->id)
-                            ->get()
-                            ->reverse()
+                            ->paginate(2)
+                            
 
      	]);
  
